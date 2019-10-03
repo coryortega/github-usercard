@@ -31,7 +31,7 @@ const entryPoint = document.querySelector(".cards");
           follow this link in your browser https://api.github.com/users/<Your github name>/followers 
           , manually find some other users' github handles, or use the list found 
           at the bottom of the page. Get at least 5 different Github usernames and add them as
-          Individual strings to the friendsArray below.
+          Individual strings to the friendsArray below .
           
           Using that array, iterate over it, requesting data for each user, creating a new card for each
           user, and adding that card to the DOM.
