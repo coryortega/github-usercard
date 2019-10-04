@@ -42,15 +42,24 @@ axios
 .then(response => {
   console.log(response);
   response.data.forEach(item => {
-    const followerInfo = card(item);
-    entryPoint.appendChild(followerInfo);
+  
+    followersArray.push(item.url)
+
+    axios
+    .get(item.url)
+    .then(response => {
+    console.log(response);
+    const userInfo = card(response.data);
+    entryPoint.appendChild(userInfo);
+    })
   });
 })
 .catch(error => {
   console.log("The data was not returned", error);
 });
 
-const followersArray = [];
+let followersArray = [];
+console.log(followersArray);
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
